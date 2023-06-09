@@ -1,0 +1,80 @@
+<div class="jumbotron jumbotron-fluid" data-pages="parallax">
+    <div class=" container-fluid ">
+        <div class="d-flex justify-content-between">
+            <!-- START BREADCRUMB -->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a [routerLink]="'/home'">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Add Employee</li>
+            </ol>
+            <!-- <h3>Add An Employee</h3> -->
+            <div></div>
+        </div>
+    </div>
+</div>
+<!-- END JUMBOTRON -->
+<div class="container-fluid mb-4" style="background: cadetblue; min-height: 77vh;">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="mb-4 pb-2 pb-md-0 mb-md-5">Employee Registration Form</h2>
+                        <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <mat-form-field class="col-md-6 mb-4 pb-2" appearance="outline">
+                                    <mat-label>First Name</mat-label>
+                                    <input type="text" matInput placeholder="Enter first name" formControlName="first_name" [ngClass]="{ 'is-invalid': submitted && f['first_name'].errors }" required>
+                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                    <mat-error class="invalid-feedback" *ngIf="f['first_name'].errors?.['required']">First Name is rquired</mat-error>
+                                </mat-form-field>
+                                <mat-form-field class="col-md-6 mb-4 pb-2" appearance="outline">
+                                    <mat-label>Last Name</mat-label>
+                                    <input type="text" matInput placeholder="Enter last name" formControlName="last_name" [ngClass]="{ 'is-invalid': submitted && f['last_name'].errors }" required>
+                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                    <mat-error class="invalid-feedback" *ngIf="f['last_name'].errors?.['required']">Last Name is rquired</mat-error>
+                                </mat-form-field>
+                                <mat-form-field class="col-md-6 mb-4 pb-2" appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input type="email" matInput placeholder="Enter email address" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" required>
+                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                    <mat-error class="invalid-feedback" *ngIf="f['email'].errors?.['required']">Email is rquired</mat-error>
+                                    <mat-error class="invalid-feedback" *ngIf="f['email'].errors?.['pattern']">Email is not valid</mat-error>
+                                </mat-form-field>
+                                <mat-form-field class="col-md-6 mb-4 pb-2" appearance="outline">
+                                    <mat-label>Choose a date of birth</mat-label>
+                                    <input formControlName="dob" [ngClass]="{ 'is-invalid': submitted && f['dob'].errors }" [max]="maxDate" matInput [matDatepicker]="picker" required>
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                    <mat-error class="invalid-feedback" *ngIf="submitted && f['dob'].errors?.['required']">Date of birth is rquired</mat-error>
+                                </mat-form-field>
+                                <mat-form-field class="col-md-6 mb-4 pb-2" appearance="outline">
+                                    <mat-label>Country</mat-label>
+                                    <input type="text" matInput placeholder="Enter Country Name" formControlName="country" [ngClass]="{ 'is-invalid': submitted && f['country'].errors }" required>
+                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                    <mat-error class="invalid-feedback" *ngIf="f['country'].errors?.['required']">Country is rquired</mat-error>
+                                </mat-form-field>
+
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <div class="form-outline">
+                                        <input class="form-control" id="formFileLg" type="file" [ngClass]="{ 'is-invalid': submitted && f['avatar'].errors }" accept="image/*" (change)="onFileChange($event)" />
+                                        <div class=" text-muted mt-2">Upload profile picture*</div>
+                                        <div *ngIf="submitted && f['avatar'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['avatar'].errors?.['required']">Please select an image</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-2">
+                                <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

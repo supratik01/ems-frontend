@@ -1,0 +1,26 @@
+h1 {
+    font-size: 30px;
+}
+
+
+/*Table Style One*/
+
+.table {
+    .cell {
+        padding: 20px;
+        background: rebeccapurple !important;
+        color: white;
+    }
+}
+
+::ng-deep {
+    th {
+        background-color: rebeccapurple !important;
+        color: white !important;
+    }
+    .no-record-found {
+        display: flex;
+        justify-content: center;
+        background: wheat;
+    }
+}
