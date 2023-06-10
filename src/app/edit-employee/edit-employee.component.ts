@@ -31,7 +31,7 @@ export class EditEmployeeComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.empId = this.route.snapshot.paramMap.get('empId');
+    this.empId = this.route.snapshot.paramMap.get('id');
 
     this.empForm = this.formBuilder.group({
       first_name: new FormControl(null, Validators.compose([

@@ -35,7 +35,7 @@ export class ApiService {
   createEmployee(payload: any): Observable<any> {
     return this.http
       .post(
-        this.apiURL + '/add-employee',
+        this.apiURL + '/employees',
         payload
       )
       .pipe(retry(1), catchError(this.handleError));
@@ -45,7 +45,7 @@ export class ApiService {
   updateEmployee(id: any, payload: any): Observable<any> {
     return this.http
       .put(
-        this.apiURL + '/edit-employee/' + id,
+        this.apiURL + '/employees/' + id,
         payload
       )
       .pipe(retry(1), catchError(this.handleError));
@@ -54,7 +54,7 @@ export class ApiService {
   // HttpClient API delete() method => Delete employee
   deleteEmployee(id: any): Observable<any> {
     return this.http
-      .delete(this.apiURL + '/delete-employee/' + id)
+      .delete(this.apiURL + '/employees/' + id)
       .pipe(retry(1), catchError(this.handleError));
   }
 
