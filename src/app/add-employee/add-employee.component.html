@@ -26,19 +26,25 @@
                                 <mat-form-field class="col-md-6 mb-4 pb-2" appearance="outline">
                                     <mat-label>First Name</mat-label>
                                     <input type="text" matInput placeholder="Enter first name" formControlName="first_name" [ngClass]="{ 'is-invalid': submitted && f['first_name'].errors }" required>
-                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                    <mat-icon matSuffix><span class="material-symbols-outlined">
+                                    person
+                                    </span></mat-icon>
                                     <mat-error class="invalid-feedback" *ngIf="f['first_name'].errors?.['required']">First Name is rquired</mat-error>
                                 </mat-form-field>
                                 <mat-form-field class="col-md-6 mb-4 pb-2" appearance="outline">
                                     <mat-label>Last Name</mat-label>
                                     <input type="text" matInput placeholder="Enter last name" formControlName="last_name" [ngClass]="{ 'is-invalid': submitted && f['last_name'].errors }" required>
-                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                    <mat-icon matSuffix><span class="material-symbols-outlined">
+                                    person
+                                    </span></mat-icon>
                                     <mat-error class="invalid-feedback" *ngIf="f['last_name'].errors?.['required']">Last Name is rquired</mat-error>
                                 </mat-form-field>
                                 <mat-form-field class="col-md-6 mb-4 pb-2" appearance="outline">
                                     <mat-label>Email</mat-label>
                                     <input type="email" matInput placeholder="Enter email address" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" required>
-                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                    <mat-icon matSuffix><span class="material-symbols-outlined">
+                                      contact_mail
+                                      </span></mat-icon>
                                     <mat-error class="invalid-feedback" *ngIf="f['email'].errors?.['required']">Email is rquired</mat-error>
                                     <mat-error class="invalid-feedback" *ngIf="f['email'].errors?.['pattern']">Email is not valid</mat-error>
                                 </mat-form-field>
@@ -52,7 +58,9 @@
                                 <mat-form-field class="col-md-6 mb-4 pb-2" appearance="outline">
                                     <mat-label>Country</mat-label>
                                     <input type="text" matInput placeholder="Enter Country Name" formControlName="country" [ngClass]="{ 'is-invalid': submitted && f['country'].errors }" required>
-                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                    <mat-icon matSuffix><span class="material-symbols-outlined">
+                                      flag
+                                      </span></mat-icon>
                                     <mat-error class="invalid-feedback" *ngIf="f['country'].errors?.['required']">Country is rquired</mat-error>
                                 </mat-form-field>
 
